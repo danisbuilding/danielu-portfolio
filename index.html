@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Daniel Stringer / Portfolio</title>
+<meta name="description" content="Staff / Lead UX Researcher and Builder. Ten years at Google, Facebook, and the World Bank. Stanford PhD. Research that kills the wrong bets and ships the right ones.">
+<meta name="author" content="Daniel Stringer">
+<meta property="og:title" content="Daniel Stringer / Portfolio">
+<meta property="og:description" content="Staff / Lead UX Researcher and Builder. Research that kills the wrong bets and ships the right ones.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://danielu.xyz">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Daniel Stringer / Portfolio">
+<meta name="twitter:description" content="Staff / Lead UX Researcher and Builder. Research that kills the wrong bets and ships the right ones.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230A0A0A'/%3E%3Ctext x='16' y='22' font-family='Archivo Black, sans-serif' font-size='18' font-weight='900' fill='%23FFD60A' text-anchor='middle'%3EDS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --ink: #0A0A0A;
+    --yellow: #FFD60A;
+    --magenta: #FF2A6D;
+    --green: #06E29B;
+    --muted: #4A4A4A;
+    --faint: #B8B8B8;
+    --display: 'Archivo Black', sans-serif;
+    --sans: 'Inter Tight', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+  header { padding: 14px 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; }
+  .brand { font-family: var(--display); font-size: 24px; letter-spacing: -0.02em; text-transform: uppercase; }
+  .brand .slash { color: var(--yellow); }
+
+  .meta-row { display: grid; grid-template-columns: auto auto 1fr auto; border-bottom: 3px solid var(--ink); }
+  .meta-row > div { padding: 10px 18px; border-right: 3px solid var(--ink); font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; display: flex; align-items: center; }
+  .meta-row .role { background: var(--yellow); }
+  .meta-row .stage { background: var(--bg); }
+  .meta-row .spacer { background: var(--bg); border-right: 3px solid var(--ink); }
+  .meta-row .links { background: var(--green); padding: 0; border-right: 0; }
+  .meta-row .links a { display: inline-block; padding: 10px 18px; color: var(--ink); text-decoration: none; border-right: 3px solid var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .meta-row .links a:last-child { border-right: 0; }
+  .meta-row .links a:hover { background: var(--ink); color: var(--green); }
+
+  .hero { padding: 36px 32px; border-bottom: 3px solid var(--ink); display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
+  .hero h1 { font-family: var(--display); font-size: 82px; line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
+  .hero h1 .mark-y { background: var(--yellow); padding: 0 6px; display: inline-block; }
+  .hero h1 .mark-p { background: var(--magenta); color: var(--bg); padding: 0 6px; display: inline-block; }
+  .hero .lede { font-family: var(--sans); font-size: 24px; line-height: 1.35; font-weight: 500; padding-top: 10px; letter-spacing: -0.01em; }
+  .hero .lede::before { content: ""; display: block; width: 56px; height: 5px; background: var(--ink); margin-bottom: 18px; }
+
+  .preview-strip { padding: 10px 32px; background: var(--ink); color: var(--bg); border-bottom: 3px solid var(--ink); display: flex; justify-content: space-between; align-items: center; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .preview-strip .arrow { font-family: var(--display); font-size: 16px; color: var(--yellow); }
+
+  .columns { display: grid; grid-template-columns: 1.3fr 0.85fr 1fr; border-bottom: 3px solid var(--ink); }
+  .col { border-right: 3px solid var(--ink); padding: 28px 24px; }
+  .col:last-child { border-right: 0; }
+  .col-head { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid var(--ink); padding-bottom: 14px; margin-bottom: 18px; }
+  .col h2 { font-family: var(--display); font-size: 38px; line-height: 0.9; letter-spacing: -0.02em; text-transform: uppercase; }
+  .col .num { font-family: var(--display); font-size: 38px; color: var(--faint); }
+
+  /* White · Yellow · White */
+  .col-cases { background: var(--bg); }
+  .col-lab { background: var(--yellow); }
+  .col-about { background: var(--bg); color: var(--ink); }
+
+  .col .intro { font-family: var(--sans); font-size: 12px; font-weight: 500; line-height: 1.5; margin-bottom: 16px; max-width: 360px; color: var(--muted); }
+
+  .row { padding: 12px 0; border-bottom: 2px solid var(--ink); cursor: pointer; display: grid; grid-template-columns: 36px 1fr auto; gap: 10px; align-items: baseline; }
+  .row:hover { background: var(--magenta); color: var(--bg); margin: 0 -10px; padding-left: 10px; padding-right: 10px; }
+  .col-lab .row:hover { background: var(--magenta); color: var(--bg); }
+  .row .n { font-family: var(--display); font-size: 14px; }
+  .row .t { font-family: var(--sans); font-size: 13px; font-weight: 500; line-height: 1.35; color: var(--ink); }
+  .row:hover .t { color: var(--bg); }
+  .row .y { font-family: var(--display); font-size: 13px; color: var(--ink); }
+  .row:hover .y { color: var(--bg); }
+
+  .lab-row { padding: 14px 0; border-bottom: 2px solid var(--ink); }
+  .lab-row h3 { font-family: var(--display); font-size: 30px; line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; margin-bottom: 4px; }
+  .lab-row .tag { font-family: var(--sans); font-weight: 500; font-size: 13px; margin-bottom: 10px; }
+  .lab-row a { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: var(--bg); padding: 5px 10px; border: 2px solid var(--ink); text-decoration: none; display: inline-block; }
+  .lab-row a:hover { background: var(--magenta); color: var(--bg); }
+
+  .ab p { font-family: var(--sans); font-size: 12px; line-height: 1.6; margin-bottom: 8px; color: var(--muted); }
+  .ab p strong { background: var(--yellow); color: var(--ink); padding: 0 4px; font-weight: 700; }
+  .ab p .alt { background: var(--magenta); color: var(--bg); padding: 0 4px; font-weight: 700; }
+  .contact { margin-top: 14px; padding-top: 12px; border-top: 2px solid var(--ink); display: flex; gap: 8px; }
+  .contact a { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink); background: transparent; padding: 5px 10px; border: 2px solid var(--ink); text-decoration: none; }
+  .contact a:hover { background: var(--magenta); color: var(--bg); border-color: var(--magenta); }
+
+  footer { padding: 20px 32px; background: var(--green); color: var(--ink); font-family: var(--display); font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; display: flex; justify-content: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="brand">DANIEL STRINGER <span class="slash">/</span> PORTFOLIO</div>
+</header>
+
+<div class="meta-row">
+  <div class="role">Staff / Lead UX Researcher</div>
+  <div class="stage">Builder · PhD · Stanford</div>
+  <div class="spacer"></div>
+  <div class="links"><a href="#">linkedin</a><a href="mailto:chat@danielstringer.com">email</a></div>
+</div>
+
+<section class="hero">
+  <h1>Research that kills the <span class="mark-y">wrong bets</span>, and ships the <span class="mark-p">right ones</span>.</h1>
+  <div class="lede">Ten years inside Google, Facebook, and the World Bank, on products used by hundreds of millions. I move roadmaps, partner with executives on the calls that matter, and build the evidence that lets a team commit or walk away.</div>
+</section>
+
+<div class="preview-strip">
+  <span>Below · 05 Case Studies · 02 Live Products · 01 About</span>
+  <span class="arrow">↓ SCROLL</span>
+</div>
+
+<section class="columns">
+  <div class="col col-cases">
+    <div class="col-head"><h2>Case Studies</h2><div class="num">05</div></div>
+    <div class="intro">Five studies where research changed what the team built next. Open any row to read the full case.</div>
+    <div class="row"><div class="n">01</div><div class="t">Pulling the plug on an AI feature for a marketplace's power users.</div><div class="y">2024</div></div>
+    <div class="row"><div class="n">02</div><div class="t">Stopping a high-risk launch before it shipped.</div><div class="y">2023</div></div>
+    <div class="row"><div class="n">03</div><div class="t">Surfacing the hidden team economy inside a solo-first marketplace.</div><div class="y">2022</div></div>
+    <div class="row"><div class="n">04</div><div class="t">Standing up mobile research capability during a company-wide pivot.</div><div class="y">2023</div></div>
+    <div class="row"><div class="n">05</div><div class="t">Diagnosing why a Layer-2 blockchain network was losing developers.</div><div class="y">2024</div></div>
+  </div>
+
+  <div class="col col-lab">
+    <div class="col-head"><h2>Code Lab</h2><div class="num">02</div></div>
+    <div class="intro">When a problem won't leave me alone, I build the solution.</div>
+    <div class="lab-row">
+      <h3>Vivibra</h3>
+      <div class="tag">Small event hosting with big capabilities.</div>
+      <a href="https://vivibra.xyz" target="_blank">Visit →</a>
+    </div>
+    <div class="lab-row">
+      <h3>RxRoam</h3>
+      <div class="tag">Know before you pack: medication rules by country.</div>
+      <a href="https://rxroam.bolt.host" target="_blank">Visit →</a>
+    </div>
+  </div>
+
+  <div class="col col-about">
+    <div class="col-head"><h2>About</h2><div class="num">—</div></div>
+    <div class="intro">Staff / Lead UX Researcher · Builder · PhD</div>
+    <div class="ab">
+      <p>A decade in rooms where the question was not only what users think, but <strong>what the company does next</strong>.</p>
+      <p>At Google and Facebook I owned research on products at planetary scale. At Upwork a misread finding could decide a small business's quarter.</p>
+      <p>Case studies are <span class="alt">about consequence</span>. PhD at Stanford in the learning sciences, sharpened at the d.school.</p>
+      <p>Focused on <strong>generative AI</strong>, <strong>EdTech</strong>, entrepreneur tools, and <span class="alt">FinTech</span>.</p>
+      <div class="contact">
+        <a href="#">linkedin</a><a href="mailto:chat@danielstringer.com">email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>Daniel Stringer / 2026</span>
+</footer>
+
+</body>
+</html>
