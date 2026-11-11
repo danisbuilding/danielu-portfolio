@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Surfacing the hidden team economy inside a solo-first marketplace. / Daniel Stringer</title>
+<meta name="description" content="Reframed agencies as marketplace multipliers. Shifted internal thinking on identity, reputation, fee structure, and team representation. Redirected several upstream product investments.">
+<meta name="author" content="Daniel Stringer">
+<meta property="og:title" content="Surfacing the hidden team economy inside a solo-first marketplace. / Daniel Stringer">
+<meta property="og:description" content="Reframed agencies as marketplace multipliers. Shifted internal thinking on identity, reputation, fee structure, and team representation. Redirected several upstream product investments.">
+<meta property="og:type" content="article">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;0 0 32 32&#39;%3E%3Crect width=&#39;32&#39; height=&#39;32&#39; fill=&#39;%230A0A0A&#39;/%3E%3Ctext x=&#39;16&#39; y=&#39;22&#39; font-family=&#39;Archivo Black, sans-serif&#39; font-size=&#39;18&#39; font-weight=&#39;900&#39; fill=&#39;%23FFD60A&#39; text-anchor=&#39;middle&#39;%3EDS%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter+Tight:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --ink: #0A0A0A;
+    --yellow: #FFD60A;
+    --magenta: #FF2A6D;
+    --green: #06E29B;
+    --muted: #4A4A4A;
+    --faint: #B8B8B8;
+    --display: 'Archivo Black', sans-serif;
+    --sans: 'Inter Tight', system-ui, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; }
+
+  header { padding: 14px 32px; background: var(--ink); color: var(--bg); display: flex; align-items: center; justify-content: space-between; }
+  .brand { font-family: var(--display); font-size: 24px; letter-spacing: -0.02em; text-transform: uppercase; color: var(--bg); text-decoration: none; }
+  .back { font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--yellow); text-decoration: none; padding: 6px 12px; border: 2px solid var(--yellow); }
+  .back:hover { background: var(--yellow); color: var(--ink); }
+
+  .meta-row { display: grid; grid-template-columns: auto auto 1fr auto; border-bottom: 3px solid var(--ink); }
+  .meta-row > div { padding: 10px 18px; border-right: 3px solid var(--ink); font-family: var(--sans); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; display: flex; align-items: center; }
+  .meta-row .case-num { background: var(--yellow); font-family: var(--display); font-size: 14px; letter-spacing: 0; }
+  .meta-row .case-label { background: var(--bg); }
+  .meta-row .spacer { background: var(--bg); border-right: 3px solid var(--ink); }
+  .meta-row .links { background: var(--green); padding: 0; border-right: 0; }
+  .meta-row .links a { display: inline-block; padding: 10px 18px; color: var(--ink); text-decoration: none; border-right: 3px solid var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+  .meta-row .links a:last-child { border-right: 0; }
+  .meta-row .links a:hover { background: var(--ink); color: var(--green); }
+
+  .hero { padding: 44px 32px 36px; border-bottom: 3px solid var(--ink); display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
+  .hero h1 { font-family: var(--display); font-size: 58px; line-height: 0.95; letter-spacing: -0.025em; text-transform: uppercase; }
+  .hero .context { font-family: var(--sans); font-size: 15px; font-weight: 500; letter-spacing: 0.02em; }
+  .hero .context::before { content: ""; display: block; width: 56px; height: 5px; background: var(--ink); margin-bottom: 18px; }
+
+  .summary { display: grid; grid-template-columns: 1fr 1fr 1fr; border-bottom: 3px solid var(--ink); }
+  .summary > div { padding: 22px 24px; border-right: 3px solid var(--ink); }
+  .summary > div:last-child { border-right: 0; }
+  .summary .label { font-family: var(--display); font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--faint); margin-bottom: 8px; }
+  .summary .text { font-size: 14px; line-height: 1.45; font-weight: 500; }
+  .summary .outcome { background: var(--yellow); }
+  .summary .outcome .label { color: var(--ink); opacity: 0.55; }
+
+  .body { max-width: 780px; margin: 0 auto; padding: 56px 32px; }
+  .section { margin-bottom: 48px; }
+  .section h2 { font-family: var(--display); font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink); margin-bottom: 20px; padding-bottom: 10px; border-bottom: 3px solid var(--ink); display: inline-block; padding-right: 12px; }
+  .section p { font-size: 17px; line-height: 1.6; color: var(--ink); margin-bottom: 16px; }
+  .pullquote { font-family: var(--display); font-size: 26px; line-height: 1.2; letter-spacing: -0.01em; text-transform: uppercase; background: var(--yellow); padding: 24px 28px; margin: 28px -28px; display: block; border-left: 6px solid var(--ink); }
+
+  .nextprev { display: grid; grid-template-columns: 1fr 1fr; border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  .nextprev a { padding: 24px 28px; text-decoration: none; color: var(--ink); font-family: var(--sans); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; display: block; }
+  .nextprev a:first-child { border-right: 3px solid var(--ink); }
+  .nextprev a:hover { background: var(--magenta); color: var(--bg); }
+  .nextprev .label { font-family: var(--display); font-size: 11px; color: var(--faint); letter-spacing: 0.1em; margin-bottom: 6px; }
+  .nextprev a:hover .label { color: var(--bg); opacity: 0.8; }
+  .nextprev .title { font-weight: 500; font-size: 14px; line-height: 1.3; text-transform: none; letter-spacing: 0; }
+  .nextprev .next-link { text-align: right; }
+
+  footer { padding: 20px 32px; background: var(--green); color: var(--ink); font-family: var(--display); font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; display: flex; justify-content: center; }
+
+  @media (max-width: 1024px) {
+    header { padding: 12px 24px; }
+    .brand { font-size: 20px; }
+    .hero { padding: 32px 24px; gap: 32px; }
+    .hero h1 { font-size: 44px; }
+    .body { padding: 44px 24px; }
+    .section p { font-size: 16px; }
+    .pullquote { font-size: 22px; padding: 20px 22px; margin: 24px -22px; }
+  }
+
+  @media (max-width: 720px) {
+    body { font-size: 14px; }
+    header { padding: 12px 18px; }
+    .brand { font-size: 18px; }
+    .back { font-size: 10px; padding: 5px 9px; }
+
+    .meta-row { grid-template-columns: auto 1fr; }
+    .meta-row > div { border-right: 0; border-bottom: 3px solid var(--ink); padding: 8px 14px; font-size: 10px; letter-spacing: 0.12em; }
+    .meta-row .spacer, .meta-row .links { display: none; }
+
+    .hero { grid-template-columns: 1fr; padding: 28px 18px; gap: 18px; }
+    .hero h1 { font-size: 30px; }
+    .hero .context { font-size: 14px; }
+    .hero .context::before { width: 40px; height: 4px; margin-bottom: 14px; }
+
+    .summary { grid-template-columns: 1fr; }
+    .summary > div { border-right: 0; border-bottom: 3px solid var(--ink); padding: 16px 18px; }
+    .summary > div:last-child { border-bottom: 0; }
+
+    .body { padding: 32px 18px; }
+    .section { margin-bottom: 36px; }
+    .section h2 { font-size: 12px; margin-bottom: 14px; }
+    .section p { font-size: 15px; }
+    .pullquote { font-size: 18px; padding: 18px 18px; margin: 20px -8px; }
+
+    .nextprev { grid-template-columns: 1fr; }
+    .nextprev a { padding: 18px 20px; }
+    .nextprev a:first-child { border-right: 0; border-bottom: 3px solid var(--ink); }
+    .nextprev .next-link { text-align: left; }
+
+    footer { padding: 18px 18px; font-size: 13px; letter-spacing: 0.06em; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/" class="brand">DANIEL STRINGER</a>
+  <a href="/" class="back">← Portfolio</a>
+</header>
+
+<div class="meta-row">
+  <div class="case-num">Case 03 / 05</div>
+  <div class="case-label">reframed marketplace strategy</div>
+  <div class="spacer"></div>
+  <div class="links"><a href="/">home</a><a href="mailto:chat@danielstringer.com">email</a></div>
+</div>
+
+<section class="hero">
+  <h1>Surfacing the hidden team economy inside a solo-first marketplace.</h1>
+  <div class="context">A global services marketplace · Lead UX Researcher</div>
+</section>
+
+<section class="summary">
+  <div class="outcome"><div class="label">Outcome</div><div class="text">Reframed agencies as marketplace multipliers. Shifted internal thinking on identity, reputation, fee structure, and team representation. Redirected several upstream product investments.</div></div>
+  <div><div class="label">Methods</div><div class="text">In-depth interviews · Discovery research · Marketplace systems analysis · Strategic narrative</div></div>
+  <div><div class="label">Role</div><div class="text">Lead UX Researcher partnering with revenue and marketplace product. Owned the discovery agenda, conducted the interviews personally, and presented the synthesis to product leadership.</div></div>
+</section>
+
+<article class="body">
+<section class="section"><h2>CONTEXT</h2>
+<p>The marketplace's revenue model favored larger, longer-term engagements. Analysis showed those high-value projects were disproportionately complex and most often fulfilled by multi-person teams rather than individuals. The product, however, was designed almost entirely around individual freelancers. Leadership suspected that supporting "agencies" better could unlock higher-value work, but no one had a clear picture of how agencies actually operated on the platform.</p>
+</section>
+
+<section class="section"><h2>PROBLEM</h2>
+<p>There was a mismatch between how work was actually getting done (team-based) and how the platform represented it (individual-based). High-value work was happening in shadow structures, fee and permission systems were creating perverse incentives, and the platform's identity model could not represent collaboration at scale. The strategic question: how do you redesign for team-based work without breaking trust or marketplace dynamics?</p>
+</section>
+
+<section class="section"><h2>APPROACH</h2>
+<p>I conducted in-depth qualitative interviews with about eight high-performing agency owners across IT, design, and content. The goal was to understand real-world agency behavior at the high end, where the patterns are most informative, rather than to sample broadly. The questions probed structure, workflow, fee strategies, identity, client perception, and the workarounds owners had developed inside a platform built for individuals.</p>
+</section>
+
+<section class="section"><h2>WHAT WE LEARNED</h2>
+<p>Agency models varied widely. Some were structured firms with offices and fixed staff; others were loose, fluid collectives. The platform's fee structure and permission systems incentivized "shadow teams," where one freelancer fronted publicly while others worked behind the scenes. Identity and permissions were misaligned with team-based work, making collaboration hard to represent. Clients carried stigma against agencies, often assuming lower transparency or higher costs.</p>
+<blockquote class="pullquote">Agency owners were operating as high-leverage marketplace multipliers, combining domain expertise, business development, and talent vetting. The platform was treating them as enlarged individuals, and losing the value of the multiplier in the process.</blockquote>
+</section>
+
+<section class="section"><h2>RECOMMENDATION</h2>
+<p>Make team structures first-class on the platform. Enable explicit representation of collaborators. Redesign reputation systems so feedback could attach to both individuals and teams. Fix fee structures that penalized collaboration. Address client stigma through segmentation and positioning. Expand profile customization to support agency branding.</p>
+<p>The work surfaced hidden marketplace dynamics and reframed agencies as growth drivers rather than awkward fits. It influenced internal thinking on marketplace structure, incentive design, and identity systems, and shifted several upstream investments toward supporting team-based work.</p>
+</section>
+</article>
+
+<nav class="nextprev">
+  <a href="/case-studies/02"><div class="label">← Previous</div><div class="title">Case 02</div></a>
+  <a href="/case-studies/04" class="next-link"><div class="label">Next →</div><div class="title">Case 04</div></a>
+</nav>
+
+<footer>
+  <span>Daniel Stringer / 2026</span>
+</footer>
+
+</body>
+</html>
