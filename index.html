@@ -36,7 +36,7 @@
   .brand { font-family: var(--display); font-size: 24px; letter-spacing: -0.02em; text-transform: uppercase; color: var(--bg); text-decoration: none; }
   .header-linkedin { display: none; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--yellow); text-decoration: none; padding: 5px 10px; border: 2px solid var(--yellow); background: transparent; }
   .header-linkedin:hover { background: var(--yellow); color: var(--ink); }
-  .stage-email { display: none; margin-left: auto; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); text-decoration: none; padding: 5px 10px; border: 2px solid var(--green); background: transparent; }
+  .stage-email { display: none; margin-left: auto; font-family: var(--sans); font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--green); text-decoration: none; padding: 5px 10px; border: 2px solid var(--green); background: var(--ink); text-align: center; }
   .stage-email:hover { background: var(--green); color: var(--ink); }
 
   .meta-row { display: grid; grid-template-columns: auto 1fr auto; border-bottom: 3px solid var(--ink); }
@@ -125,10 +125,10 @@
     .header-linkedin { display: inline-block; }
 
     .meta-row { grid-template-columns: 1fr; }
-    .meta-row > div { border-right: 0; border-bottom: 3px solid var(--ink); padding: 8px 14px; font-size: 10px; letter-spacing: 0.12em; }
-    .meta-row .stage { justify-content: space-between; gap: 10px; }
+    .meta-row > div { border-right: 0; border-bottom: 3px solid var(--ink); padding: 6px 10px; font-size: 10px; letter-spacing: 0.08em; }
+    .meta-row .stage { justify-content: space-between; gap: 6px; }
     .meta-row .spacer, .meta-row .links { display: none; }
-    .stage-email { display: inline-block; }
+    .header-linkedin, .stage-email { display: inline-block; min-width: 86px; padding: 4px 8px; font-size: 10px; letter-spacing: 0.1em; }
 
     .hero { grid-template-columns: 1fr; padding: 24px 18px; gap: 20px; }
     .hero h1 { font-size: 40px; line-height: 0.95; }
@@ -168,7 +168,8 @@
     .brand { font-size: 16px; }
     .hero h1 { font-size: 34px; }
     .hero .lede { font-size: 15px; }
-    .header-linkedin, .stage-email { font-size: 9px; padding: 4px 8px; }
+    .meta-row > div { padding: 5px 8px; letter-spacing: 0.05em; font-size: 9px; }
+    .header-linkedin, .stage-email { min-width: 78px; font-size: 9px; letter-spacing: 0.08em; padding: 3px 6px; }
   }
 </style>
 </head>
