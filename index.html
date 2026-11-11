@@ -61,8 +61,10 @@
   .hero .lede { font-family: var(--sans); font-size: 24px; line-height: 1.35; font-weight: 500; padding-top: 10px; letter-spacing: -0.01em; }
   .hero .lede::before { content: ""; display: block; width: 56px; height: 5px; background: var(--ink); margin-bottom: 18px; }
 
-  .preview-strip { padding: 10px 32px; background: var(--ink); color: var(--bg); border-bottom: 3px solid var(--ink); display: flex; justify-content: space-between; align-items: center; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-  .preview-strip .arrow { font-family: var(--display); font-size: 16px; color: var(--yellow); }
+  .preview-strip { padding: 10px 32px; background: var(--ink); color: var(--bg); border-bottom: 3px solid var(--ink); display: flex; justify-content: flex-end; align-items: center; font-family: var(--sans); font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+  .preview-strip .arrow { font-family: var(--display); font-size: 16px; color: var(--yellow); background: transparent; border: 0; padding: 0; text-decoration: none; cursor: pointer; letter-spacing: 0.1em; text-transform: uppercase; }
+  .preview-strip .arrow:hover { color: var(--bg); }
+  .preview-strip .arrow:focus-visible { outline: 2px solid var(--yellow); outline-offset: 4px; }
 
   .mobile-tabs { display: none; }
 
@@ -190,8 +192,7 @@
 </section>
 
 <div class="preview-strip">
-  <span>Below · 05 Case Studies · 02 Live Products · 10+ About</span>
-  <span class="arrow">↓ SCROLL</span>
+  <button type="button" class="arrow" data-scroll-target="columns">↓ SCROLL</button>
 </div>
 
 <nav class="mobile-tabs" aria-label="Section navigation">
@@ -256,6 +257,18 @@
         cols.forEach(function(c){ c.classList.toggle('active', c.getAttribute('data-section') === target); });
       });
     });
+
+    var scrollBtn = document.querySelector('.arrow[data-scroll-target]');
+    if (scrollBtn) {
+      scrollBtn.addEventListener('click', function(){
+        var el = document.querySelector('.' + scrollBtn.getAttribute('data-scroll-target'));
+        if (!el) return;
+        var rect = el.getBoundingClientRect();
+        var elBottom = rect.bottom + window.scrollY;
+        var top = Math.max(0, elBottom - window.innerHeight);
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      });
+    }
   })();
 </script>
 
