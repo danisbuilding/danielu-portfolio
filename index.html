@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Daniel Stringer</title>
-<meta name="description" content="Builder · Researcher · PhD · Stanford. Ten years at Google, Facebook, and the World Bank. Research that changes what the team ships, and what it doesn't.">
+<meta name="description" content="Builder · Researcher · PhD · Stanford. Ten years at Google, Facebook, and the World Bank. Research that changes what the team ships — the evidence to commit a quarter of engineering, redirect a roadmap, or point to the calls AI can't make for them.">
 <meta name="author" content="Daniel Stringer">
 <meta property="og:title" content="Daniel Stringer">
 <meta property="og:description" content="Research that changes what the team ships, and what it doesn't. Ten years at Google, Facebook, and the World Bank.">
@@ -52,11 +52,16 @@
   .hero h1 { font-family: var(--display); font-size: 82px; line-height: 0.9; letter-spacing: -0.03em; text-transform: uppercase; }
   .hero h1 .mark-y, .hero h1 .mark-p { padding: 0 6px; display: inline-block; color: var(--ink); background-size: 200% 100%; background-position: right center; background-repeat: no-repeat; animation-timing-function: cubic-bezier(.65,.05,.36,1); animation-fill-mode: forwards; animation-iteration-count: 1; }
   .hero h1 .mark-y { background-image: linear-gradient(to right, var(--yellow) 50%, var(--bg) 50%); animation-name: wipeY; animation-duration: 0.8s; animation-delay: 0.5s; }
-  .hero h1 .mark-p { background-image: linear-gradient(to right, var(--magenta) 50%, var(--bg) 50%); animation-name: wipeP; animation-duration: 0.9s; animation-delay: 0.5s; }
+  .hero h1 .mark-p { background-image: linear-gradient(to right, var(--magenta) 50%, var(--bg) 50%); animation-name: wipeP, flipTextP; animation-duration: 0.9s, 0.001s; animation-delay: 0.5s, 1.4s; }
+  .hero .lede .mark-sub-y { padding: 0 4px; display: inline; color: var(--ink); background-image: linear-gradient(to right, var(--yellow) 50%, var(--bg) 50%); background-size: 200% 100%; background-position: right center; background-repeat: no-repeat; -webkit-box-decoration-break: clone; box-decoration-break: clone; animation-timing-function: cubic-bezier(.65,.05,.36,1); animation-fill-mode: forwards; animation-iteration-count: 1; animation-name: wipeY; animation-duration: 0.9s; }
+  .hero .lede .mark-sub-y.first { animation-delay: 1.5s; }
+  .hero .lede .mark-sub-y.second { animation-delay: 2.5s; }
   @keyframes wipeY { to { background-position: left center; } }
   @keyframes wipeP { to { background-position: left center; } }
+  @keyframes flipTextP { to { color: var(--bg); } }
   @media (prefers-reduced-motion: reduce) {
-    .hero h1 .mark-y, .hero h1 .mark-p { animation: none; background-position: left center; }
+    .hero h1 .mark-y, .hero h1 .mark-p, .hero .lede .mark-sub-y { animation: none; background-position: left center; }
+    .hero h1 .mark-p { color: var(--bg); }
   }
   .hero .lede { font-family: var(--sans); font-size: 24px; line-height: 1.35; font-weight: 500; padding-top: 10px; letter-spacing: -0.01em; }
   .hero .lede::before { content: ""; display: block; width: 56px; height: 5px; background: var(--ink); margin-bottom: 18px; }
@@ -188,7 +193,7 @@
 
 <section class="hero">
   <h1>Research that changes what the <span class="mark-p">team ships</span>, and what it doesn't.</h1>
-  <div class="lede">Ten years at Google, Facebook, and the World Bank, on products used by hundreds of millions. I give executives the evidence to commit a quarter of engineering, redirect a roadmap, or stop a launch that was about to cost them, and point to the calls AI can accelerate but can't make.</div>
+  <div class="lede">Ten years at Google, Facebook, and the World Bank, on products used by hundreds of millions. I <span class="mark-sub-y first">give executives the evidence to commit</span> a quarter of engineering, redirect a roadmap, or stop a launch that was about to cost them, and point to the <span class="mark-sub-y second">calls AI can't make for them</span>.</div>
 </section>
 
 <div class="preview-strip">
