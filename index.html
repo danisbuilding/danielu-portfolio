@@ -149,8 +149,8 @@
     .mobile-tabs button { padding: 12px 6px; background: transparent; color: var(--bg); border: 0; border-right: 2px solid #333; font-family: var(--display); font-size: 14px; line-height: 1.05; letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer; text-align: center; }
     .mobile-tabs button:last-child { border-right: 0; }
     .mobile-tabs button[data-target="col-cases"].active { background: var(--yellow); color: var(--ink); }
-    .mobile-tabs button[data-target="col-lab"].active { background: var(--green); color: var(--ink); }
-    .mobile-tabs button[data-target="col-about"].active { background: var(--magenta); color: var(--bg); }
+    .mobile-tabs button[data-target="col-lab"].active { background: var(--magenta); color: var(--ink); }
+    .mobile-tabs button[data-target="col-about"].active { background: var(--green); color: var(--ink); }
 
     .columns { grid-template-columns: 1fr; }
     .col { border-right: 0; border-bottom: 3px solid var(--ink); padding: 22px 18px; display: none; }
@@ -159,6 +159,15 @@
     .col-head { padding-bottom: 12px; margin-bottom: 14px; }
     .col h2 { font-size: 28px; white-space: normal; }
     .col .num { font-size: 28px; }
+
+    .col-lab { background: var(--magenta); }
+    .col-lab .intro, .col-lab .num { color: var(--ink); }
+    .col-lab .lab-row a:hover { background: var(--ink); color: var(--magenta); }
+
+    .col-about { background: var(--green); color: var(--ink); }
+    .col-about .intro, .col-about .ab p, .col-about .num { color: var(--ink); }
+    .col-about .ab p strong.hl-green { background: var(--ink); color: var(--green); }
+    .col-about .contact a:hover { background: var(--ink); color: var(--green); border-color: var(--ink); }
 
     .row { padding: 10px 0; grid-template-columns: 28px 1fr auto; gap: 8px; }
     .row .n { font-size: 13px; }
